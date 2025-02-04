@@ -1,0 +1,6 @@
+<h1>Upload a Document</h1>
+
+<%= form_with url: documents_path, local: true, multipart: true do |f| %>
+  <%= f.file_field :file %>
+  <%= f.submit "Upload" %>
+<% end %>
