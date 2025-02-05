@@ -1,0 +1,12 @@
+<h1>AI Study Assistant</h1>
+
+<div id="chat-container">
+  <div id="chat-messages">
+    <!-- Messages will be dynamically inserted here -->
+  </div>
+
+  <%= form_with url: "/ask", method: :post, data: { turbo: true } do |form| %>
+    <%= form.text_field :query, placeholder: "Ask a question...", class: "chat-input" %>
+    <%= form.submit "Ask", class: "chat-submit" %>
+  <% end %>
+</div>

@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   resources :documents, only: [ :index, :create, :update ]
   get "documents/search", to: "documents#search"
+  post "/ask", to: "chats#ask"
+  get "/chats", to: "chats#index"
 end
