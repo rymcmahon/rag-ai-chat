@@ -3,10 +3,11 @@ require "json"
 
 class Document < ApplicationRecord
   has_one_attached :file
+  has_neighbors :embedding
 
   def self.search_similar(query)
     query_embedding = generate_query_embedding(query)
-    Document.order(Arel.sql("embedding <-> '#{query_embedding.to_json}'")).limit(5)
+    Document.nearest_neighbors(:embedding, query_embedding, distance: "cosine")
   end
 
   def self.generate_query_embedding(query)
