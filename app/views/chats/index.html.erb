@@ -1,12 +1,18 @@
-<h1>AI Study Assistant</h1>
+<div class="flex flex-col items-center w-2xl">
+  <h1 class="text-xl font-bold text-center mb-4">AI Study Assistant</h1>
 
-<div id="chat-container">
-  <div id="chat-messages">
-    <!-- Messages will be dynamically inserted here -->
+  <div id="chat-container" class="w-full max-w-lg bg-sky-50 border border-sky-200 rounded-lg shadow-lg p-4 flex flex-col h-[500px]">
+    <!-- Chat Messages -->
+    <div id="chat-messages" class="flex flex-col overflow-y-auto h-full space-y-2 pb-4">
+      <!-- Messages will be dynamically inserted here -->
+    </div>
+
+    <!-- Chat Form (sticks to bottom) -->
+    <div id="chat-form" class=" border-sky-200 pt-2">
+      <%= form_with url: "/ask", method: :post, data: { turbo: true }, class: "flex space-x-2" do |form| %>
+        <%= form.text_field :query, placeholder: "Ask a question...", class: "chat-input flex-1 p-2 border border-sky-200 rounded-lg" %>
+        <%= form.submit "Ask", class: "chat-submit bg-sky-500 text-white px-6 rounded-lg hover:bg-sky-600" %>
+      <% end %>
+    </div>
   </div>
-
-  <%= form_with url: "/ask", method: :post, data: { turbo: true } do |form| %>
-    <%= form.text_field :query, placeholder: "Ask a question...", class: "chat-input" %>
-    <%= form.submit "Ask", class: "chat-submit" %>
-  <% end %>
 </div>
