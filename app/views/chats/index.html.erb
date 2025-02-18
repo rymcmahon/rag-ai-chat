@@ -9,8 +9,8 @@
 
     <!-- Chat Form (sticks to bottom) -->
     <div id="chat-form" class=" border-sky-200 pt-2">
-      <%= form_with url: "/ask", method: :post, data: { turbo: true }, class: "flex space-x-2" do |form| %>
-        <%= form.text_field :query, placeholder: "Ask a question...", class: "chat-input flex-1 p-2 border border-sky-200 rounded-lg" %>
+      <%= form_with url: "/ask", method: :post, data: { controller: "chat", action: "submit->chat#submit", turbo: true }, class: "flex space-x-2" do |form| %>
+        <%= form.text_field :query, placeholder: "Ask a question...", class: "chat-input flex-1 p-2 border border-sky-200 rounded-lg", data: { chat_target: "input" } %>
         <%= form.submit "Ask", class: "chat-submit bg-sky-500 text-white px-6 rounded-lg hover:bg-sky-600" %>
       <% end %>
     </div>

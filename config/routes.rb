@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-
+  root "chats#index"
   resources :documents, only: [ :index, :create, :update ]
   get "documents/search", to: "documents#search"
   post "/ask", to: "chats#ask"
