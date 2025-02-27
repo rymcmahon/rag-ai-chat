@@ -5,8 +5,10 @@ class AgentService
 
     uri = URI("http://localhost:11434/api/generate")
     body = {
-      model: "mistral",
-      prompt: "Using the following context, answer the question:\n\n#{context}\n\nQuestion: #{query}",
+      model: "nous-hermes2",
+      system: "You are a friendly, helpful assistant answering questions based on the given context.",
+      prompt: "Context:\n\n#{context}\n\nQuestion: #{query}",
+      temperature: 0.2, # Lower temp for more deterministic responses
       stream: false
     }.to_json
 
