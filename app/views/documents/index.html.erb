@@ -1,6 +1,12 @@
-<h1>Upload a Document</h1>
+<div class="max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
+  <h1 class="text-xl font-semibold text-gray-800 mb-4 text-center">Upload a Document</h1>
 
-<%= form_with url: documents_path, local: true, multipart: true do |f| %>
-  <%= f.file_field :file %>
-  <%= f.submit "Upload" %>
-<% end %>
+  <%= form_with url: documents_path, local: true, multipart: true, class: "space-y-4" do |f| %>
+    <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 bg-gray-50 text-center">
+      <%= f.file_field :file, class: "w-full text-sm text-gray-700 cursor-pointer" %>
+    </div>
+
+    <%= f.submit "Upload", class: "w-full bg-emerald-500 text-white py-2 rounded-lg hover:bg-emerald-600 transition" %>
+  <% end %>
+</div>
+
