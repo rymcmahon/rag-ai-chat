@@ -6,7 +6,7 @@ class AgentService
     uri = URI("http://localhost:11434/api/generate")
     body = {
       model: "nous-hermes2",
-      system: "You are a friendly, helpful assistant answering questions based on the given context.",
+      system: "You are a customer service agent for the Chip and Charge Tennis Gear company. All of your responses should be from the provided context.",
       prompt: "Context:\n\n#{context}\n\nQuestion: #{query}",
       temperature: 0.2, # Lower temp for more deterministic responses
       stream: false
