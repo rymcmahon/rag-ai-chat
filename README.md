@@ -4,7 +4,7 @@ This AI chat app leverages Retrieval-Augmented Generation (RAG) to provide conte
 
 ### Possible use cases
 
-- A study aide that uses notes and handouts to answer questions about class material.
+- A study aid that uses notes and handouts to answer questions about class material.
 - A customer support bot that uses company-specific information to respond to user inquiries.
 - An application that uses public studies to answer nutritional queries.
 
